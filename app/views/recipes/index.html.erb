@@ -1,8 +1,23 @@
 <h1>Receitas</h1>
-<ul>
 <% @recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
+ <article>
+  <header>
+    <h2><%= recipe.name  %></h2>
+  </header>
+    <p>
     <li><%= recipe.stuff %></li>
+    </p>
+    <p>
     <li><%= recipe.calories %></li>
+    </p>
+    <table>
+     <tr>
+      <th>Modo de preparo:</th>
+      <td><%= recipe.prepare_mode %></td>
+     </tr>
+      <th>Custo do prato:</th>
+      <td><%= number_to_currency(recipe.cost) %></td>
+     </tr>
+    </table>
+ </article>
 <% end %>    
-</ul>
