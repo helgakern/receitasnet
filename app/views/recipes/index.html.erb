@@ -1,14 +1,14 @@
-<h1>Receitas</h1>
+<h1><%= pluralize(@recipes.size, "Receita", "Receitas") %></h1>
 <% @recipes.each do |recipe| %>
  <article>
   <header>
     <h2><%= recipe.name  %></h2>
   </header>
     <p>
-    <li><%= recipe.stuff %></li>
+    <li><%= truncate(recipe.stuff, length:15, separator: ' ' )%></li>
     </p>
     <p>
-    <li><%= recipe.calories %></li>
+    <li><%= formata_caloria(recipe) %></li>
     </p>
     <table>
      <tr>
