@@ -3,12 +3,16 @@
  <article>
   <header>
     <h2><%= link_to recipe.name, recipe %></h2>
+    <%= image(recipe) %>
   </header>
     <p>
-    <li><%= truncate(recipe.stuff, length:15, separator: ' ' )%></li>
+      <%= truncate(recipe.stuff, length:15, separator: ' ' )%>
     </p>
     <p>
-    <li><%= formata_caloria(recipe) %></li>
+      <%= formata_caloria(recipe) %>
+    </p>
+    <p>
+    <%= recipe.duration.to_formatted_s(:time) %> min
     </p>
     <table>
      <tr>
