@@ -33,3 +33,11 @@ Recipe.create!([
         poster: "salmao.jpg"
     }
 ])
+
+receita = Recipe.find_by(name: 'Estrogonofe de carne')
+receita.comments.create!(name: "Paulo Xavier", rating: 5, comment: "Delicioso")
+receita.comments.create!(name: "Joana Santana", rating: 4, comment: "Muito bom.")
+receita.comments.create!(name: "Augusto Barros", rating: 4, comment: "Gostoso")
+
+receita = Recipe.find_by(name: 'Salmão do Forno')
+receita.comments.create!(name: "Marta Freitas", rating: 5, comment: "O melhor que já comi.")
